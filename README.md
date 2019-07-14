@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
+
+#########
+1)After Cloning repository perfrom npm install so that all the node modules can be installed
+2)Then  try the command ng serve --environment=production or simply ng serve
+3)open webrowser and search for localhost:4200
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

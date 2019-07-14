@@ -1,0 +1,41 @@
+<mat-grid-list [cols]="columns" rowHeight=434px [gutterSize]="'50px'" *ngIf="data" infinite-scroll
+    (scrolled)="onScrollDown()">
+    <mat-grid-tile *ngFor="let tile of data.data" style="border-radius:10px;border: 0.5px solid black">
+        <mat-grid-tile-header *ngIf="tile.subProducts.offer.status" class="header">
+
+            <div [ngStyle]="{'background': 'url(' +baseUriImage +'/'+ tile.subProducts.offer.imageUrl + ') ',
+            'height':'90%','background-size':'100%','width':'100%' }">
+                <div class="offer" [ngStyle]="{'color':tile.subProducts.offer.textColor}">
+                    {{tile.subProducts.offer.text}}
+                </div>
+            </div>
+
+        </mat-grid-tile-header>
+        <img src={{baseUriImage}}{{tile.subProducts.thumbnail}} alt="No Image" width="131px" height="254px"
+            style="margin-top: -85px">
+        <mat-grid-tile-footer class="header" style="height: 130px">
+
+            <span class="footer">
+                <hr style="margin-top:19px">
+                <span style=" color: #4d4d4d;"> {{tile.subProducts.name|slice:13}} </span>
+
+                <div style="color: #999;">For:{{tile.model.name}}</div>
+                <div style="font-size: 20px;
+                    color: #ff7bac;font-weight: 700"> <span>&#8377;</span>{{tile.subProducts.sellingPrice}}
+                    <span style="color: #999">
+                        <s><span>&#8377;</span>{{tile.subProducts.mrp}}</s>
+                    </span>
+
+                    <span [ngStyle]="{'background': 'url(' +baseUriImage +'/'+ limitedStock + ')',
+                    'background-size':'140%'}" *ngIf="tile.subProducts.limitedStock">
+                    <span class="limited">{{tile.subProducts.limitedStock | slice:2}}</span>
+                    </span>
+
+
+                    <!-- <img src="{{baseUriImage}}{{limitedStock}}"> -->
+                </div>
+            </span>
+        </mat-grid-tile-footer>
+
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,25 @@
+.header{
+    background-color: white !important;
+    color: black !important;
+}
+.mat-figure {
+    display: block !important;
+}
+.offer{
+    margin-left: 18%;
+    margin-top: 4%;
+}
+.footer{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14.3px;
+    font-family: SharpSans;
+    font-weight: 400;
+    line-height: 20px;
+}
+.limited{
+    font-size: 15px;
+    color: white;
+    margin-left: 16px;
+}
